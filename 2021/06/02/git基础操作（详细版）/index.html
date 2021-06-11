@@ -190,17 +190,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -215,6 +204,17 @@
             <a href="/categories/">
               
               分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
               
               
             </a>
@@ -386,50 +386,51 @@ anchorjs、
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>git</h1>
-<h2 id="初始化"><a class="header-anchor" href="#初始化">¶</a>初始化</h2>
-<p>给某个文件夹初始化 <code>git</code></p>
+        <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>给某个文件夹初始化 <code>git</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h2 id="创建版本"><a class="header-anchor" href="#创建版本">¶</a>创建版本</h2>
-<p>给该文件夹下创建一个版本，需要该文件夹下的文件有所变化，因此创建一个文件在该文件夹下面，然后操作以下两步</p>
+
+<h2 id="创建版本"><a href="#创建版本" class="headerlink" title="创建版本"></a>创建版本</h2><p>给该文件夹下创建一个版本，需要该文件夹下的文件有所变化，因此创建一个文件在该文件夹下面，然后操作以下两步</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add code.txt</span><br><span class="line">git commit -m &#x27;关于该版本的注释、说明&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="查看版本记录"><a class="header-anchor" href="#查看版本记录">¶</a>查看版本记录</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>版本之间并不是记录了全部的文件内容信息，而是只记录目前版本相较上一个版本变化了那些。比如添加了一行代码，或者删除了一行注释。</p>
 </blockquote>
 <p>如果版本多长显示不下，可以使用简介模式</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline</span><br></pre></td></tr></table></figure>
-<h2 id="HEAD"><a class="header-anchor" href="#HEAD">¶</a>HEAD</h2>
-<p>HEAD表示当前最近的一个版本，上一个版本是 <code>HEAD ^</code> 或者 <code>HEAD~1</code> 。如果是上100个版本 则是 <code>HEAD~100</code></p>
-<h2 id="版本回退"><a class="header-anchor" href="#版本回退">¶</a>版本回退</h2>
-<p>如果需要将当前版本回退到上一个版本，或者上两个版</p>
+
+
+
+<h2 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h2><p>HEAD表示当前最近的一个版本，上一个版本是 <code>HEAD ^</code> 或者 <code>HEAD~1</code> 。如果是上100个版本 则是 <code>HEAD~100</code></p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>如果需要将当前版本回退到上一个版本，或者上两个版</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">git reset --hard HEAD~2</span><br></pre></td></tr></table></figure>
-<h2 id="版本去向指定版本"><a class="header-anchor" href="#版本去向指定版本">¶</a>版本去向指定版本</h2>
-<p>如果想要从当前的版本去向曾经提交过的任何一个版本。</p>
+
+<h2 id="版本去向指定版本"><a href="#版本去向指定版本" class="headerlink" title="版本去向指定版本"></a>版本去向指定版本</h2><p>如果想要从当前的版本去向曾经提交过的任何一个版本。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>上例可以看出，在迁移版本的时候，git并没有删除任何一个版本，只是指针指向了不同的位置而已。</p>
 </blockquote>
-<h2 id="查看在git曾经操作的记录"><a class="header-anchor" href="#查看在git曾经操作的记录">¶</a>查看在git曾经操作的记录</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
-<h2 id="工作区和暂存区"><a class="header-anchor" href="#工作区和暂存区">¶</a>工作区和暂存区</h2>
-<p><strong>工作区</strong>指的是，git当前工作的根目录位置，即是工作区。即 <code>.git</code>文件所在的位置</p>
+<h2 id="查看在git曾经操作的记录"><a href="#查看在git曾经操作的记录" class="headerlink" title="查看在git曾经操作的记录"></a>查看在git曾经操作的记录</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p><strong>工作区</strong>指的是，git当前工作的根目录位置，即是工作区。即 <code>.git</code>文件所在的位置</p>
 <p><strong>版本库</strong>指的是git创建的 <code>.git</code>文件夹，即是版本库</p>
 <p><strong>暂存区</strong>指的是版本库中的一个非常重要区域，用于暂存提交的文件修改，使用下面命令 <code>git add </code> 可以添加修改到暂存区</p>
 <p>而 <code>git commit</code>则是把暂存区中的所有修改，一次性的提交成一个版本记录。</p>
 <p>在提交版本之前可以多次将修改提交到暂存区，最后一次性的提交成版本</p>
-<h2 id="查看当前工作区的状态"><a class="header-anchor" href="#查看当前工作区的状态">¶</a>查看当前工作区的状态</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<h2 id="撤销修改"><a class="header-anchor" href="#撤销修改">¶</a>撤销修改</h2>
-<ol>
+<h2 id="查看当前工作区的状态"><a href="#查看当前工作区的状态" class="headerlink" title="查看当前工作区的状态"></a>查看当前工作区的状态</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><ol>
 <li>当加入到暂存区的文件被再次修改后，如果想要提交保留修改则使用 <code>git add</code>再次加入到暂存区，如果不想要修改了，则可以使用下面命令撤销修改。也就是相当于使用暂存区来覆盖工作区的修改。</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- 文件名</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>如果上面修改的文件使用 <code>git add</code>已经添加到了暂存区，但是此时仍然不想要此次提交了，则需要使用下面命令取消暂存</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD 文件名</span><br></pre></td></tr></table></figure>
+
 <p>再使用 <code>git checkout </code>则可以将此次修改从工作区彻底删除掉</p>
 <p>总结：想要撤销修改的几种case</p>
 <ol>
@@ -437,30 +438,32 @@ anchorjs、
 <li>修改了文件，也提交了暂存区，还是想丢弃   <strong>先 <code>git reset HEAD</code> 再 <code>git checkout</code></strong></li>
 <li>修改类文件，提交了暂存区，也提交了版本库，则可以使用 <code>git reset --hard 版本号</code> 直接回到指定的版本。</li>
 </ol>
-<h2 id="文件对比"><a class="header-anchor" href="#文件对比">¶</a>文件对比</h2>
-<ol>
+<h2 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h2><ol>
 <li><strong>对比</strong>修改了的工作区内容和最近版本HEAD内容有什么不同，使用：</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff HEAD -- 文件名</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li><strong>对比</strong>两个版本之间，某个文件的不同</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 对比HEAD版本和HEAD的上一个版本之间，某个文件(非根目录带地址)的不同</span></span><br><span class="line">git diff HEAD HEAD^ -- 文件名</span><br></pre></td></tr></table></figure>
+
 <p><strong>注：</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/20201221132351206.JPG#pic_center" alt="在这里插入图片描述"></p>
 <p>如图所示，结果中的 <code>--- +++</code>  是按照diff后面的版本顺序来看</p>
 <p><code>---</code> 代表当前最新的HEAD</p>
 <p><code>+++</code> 代表HEAD^，即HEAD的上一个版本</p>
 <p>文件内容中没有 <code>- +</code> 符号的，表示两个文件相同的地方，带有 <code>- +</code> 符号的表示两个文件不同的地方，其中带有 <code>-</code> 表示，该不同存在于HEAD 带有<code>+</code>表示该不同存在于HEAD^(即HEAD上一个版本)</p>
-<h2 id="删除文件"><a class="header-anchor" href="#删除文件">¶</a>删除文件</h2>
-<blockquote>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><blockquote>
 <p>删除文件，也是工作区文件的改修，操作方法和文件的修改是一样的</p>
 <p>如果删除了工作区的文件，想要撤销删除。和工作区的文件被修改了，要撤销一样使用 <code>git checkout -- 文件名</code></p>
 </blockquote>
 <p>工作区的文件被删除，想将删除的操作添加到暂存区，以下语句均可</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件名</span><br><span class="line">git add 文件名</span><br></pre></td></tr></table></figure>
+
 <p>提交删除到版本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#x27;注释&#x27;</span><br></pre></td></tr></table></figure>
+
 
 
         <hr>
@@ -468,12 +471,12 @@ anchorjs、
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2021/06/02/git的分支管理（详细版）/" data-toggle="tooltip" data-placement="top" title="git的分支管理（详细版）">&larr; Previous Post</a>
+            <a href="/2021/06/02/git的分支管理（详细版）/"  data-placement="top" title="git的分支管理（详细版）">&larr; 上一篇</a>
           </li>
           
           
           <li class="next">
-            <a href="/2021/04/20/keepass使用坚果云同步/" data-toggle="tooltip" data-placement="top" title="keepass使用坚果云同步">Next Post &rarr;</a>
+            <a href="/2021/04/20/keepass使用坚果云同步/"  data-placement="top" title="keepass使用坚果云同步">下一篇 &rarr;</a>
           </li>
           
         </ul>
@@ -520,7 +523,7 @@ anchorjs、
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">创建版本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E8%AE%B0%E5%BD%95"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">查看版本记录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HEAD"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">HEAD</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">版本回退</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%89%88%E6%9C%AC%E5%8E%BB%E5%90%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">版本去向指定版本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%9C%A8git%E6%9B%BE%E7%BB%8F%E6%93%8D%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">查看在git曾经操作的记录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">工作区和暂存区</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">查看当前工作区的状态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">撤销修改</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%87%E4%BB%B6%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">文件对比</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.12.</span> <span class="toc-nav-text">删除文件</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">创建版本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E8%AE%B0%E5%BD%95"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">查看版本记录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HEAD"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">HEAD</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">版本回退</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%89%88%E6%9C%AC%E5%8E%BB%E5%90%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">版本去向指定版本</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%9C%A8git%E6%9B%BE%E7%BB%8F%E6%93%8D%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">查看在git曾经操作的记录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">工作区和暂存区</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">查看当前工作区的状态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">撤销修改</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%96%87%E4%BB%B6%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">文件对比</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.12.</span> <span class="toc-nav-text">删除文件</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -547,13 +550,6 @@ anchorjs、
         
 
         <!-- Friends Blog -->
-        
-        <hr>
-        <h5>链友</h5>
-        <ul class="list-inline">
-
-          
-        </ul>
         
       </div>
     </div>

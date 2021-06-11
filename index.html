@@ -190,17 +190,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -215,6 +204,17 @@
             <a href="/categories/">
               
               分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
               
               
             </a>
@@ -382,10 +382,8 @@ anchorjs、
       
     </h3>
     <div class="post-content-preview">
-      hexo deploy一键部署免每次输入github账号密码
-hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定的问题，每次都需要输入github账号密码，即使本地创建了ssh-keygen，也是需要输入。那么针对这个问题该如何解决呢，现在就跟着我一起来解决这个问题
-¶重新生成ssh-keygen
-为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥......
+      hexo deploy一键部署免每次输入github账号密码hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定的问题，每次都需要输入github账号密码，即使本地创建了ssh-keygen，也是需要输入。那么针对这个问题该如何解决呢，现在就跟着我一起来解决这个问题
+重新生成ssh-keygen为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须......
     </div>
   </a>
   
@@ -418,18 +416,17 @@ hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定
       
     </h3>
     <div class="post-content-preview">
-      GitHub
-¶添加ssh账户
-开发机器(自己的电脑)想要和GitHub进行交互，则需要将开发机器的ssh公钥添加到GitHub账户上。
+      GitHub添加ssh账户开发机器(自己的电脑)想要和GitHub进行交互，则需要将开发机器的ssh公钥添加到GitHub账户上。
 操作步骤：
 
 修改本地的 .gitconfig文件，添加或者修改
 
 123[user]	email = GitHub邮箱	name = 名称
 
+
 创建ssh公钥，在开发机器上使用命令行生成公钥
 
-1234# -t 表示加密方式，非对称性加密 # -b 加密强......
+1234# -t 表示加密方式，非对称性加密 # -b 加密强度，......
     </div>
   </a>
   
@@ -463,14 +460,12 @@ hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定
     </h3>
     <div class="post-content-preview">
       git的分支管理
-
 分支之间彼此互不干扰，各自完成各自的工作和内容，最后再 合并到总分支(原分支) 上，安全、不影响其他分支工作
 
-¶查看当前工作在那个分支
-123git branch# 返回# * master
-¶master分支
-从项目创建之初，有且唯一的分支就是主分支，之后如果创建分支，就是一个一个的从分支，主分支被叫做master
-而HEAD所指向的直接关系是当前分支，再找到分支的版......
+查看当前工作在那个分支123git branch# 返回# * master
+
+master分支从项目创建之初，有且唯一的分支就是主分支，之后如果创建分支，就是一个一个的从分支，主分支被叫做master
+而HEAD所指向的直接关系是当前分支，再找到分支的版本。如下......
     </div>
   </a>
   
@@ -503,17 +498,16 @@ hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定
       
     </h3>
     <div class="post-content-preview">
-      git
-¶初始化
-给某个文件夹初始化 git
+      git初始化给某个文件夹初始化 git
 1git init
-¶创建版本
-给该文件夹下创建一个版本，需要该文件夹下的文件有所变化，因此创建一个文件在该文件夹下面，然后操作以下两步
-12git add code.txtgit commit -m &#x27;关于该版本的注释、说明&#x27;
-¶查看版本记录
-1git log
 
-版本之间并不是记录了全部的文件内容信息，而是只记录目前版本相较......
+创建版本给该文件夹下创建一个版本，需要该文件夹下的文件有所变化，因此创建一个文件在该文件夹下面，然后操作以下两步
+12git add code.txtgit commit -m &#x27;关于该版本的注释、说明&#x27;
+
+查看版本记录1git log
+
+
+版本之间并不是记录了全部的文件内容信息，而是只记录目前版本相较上一个版......
     </div>
   </a>
   
@@ -546,18 +540,15 @@ hexo deploy一键部署，将源码部署到GitHub的时候，由于安全鉴定
       keepass使用坚果云同步
     </h3>
     <div class="post-content-preview">
-      keepass使用坚果云同步
-keepass作为密码管理工具是非常优秀的，但是由于keepass本身并没有云同步的功能，因此需要借助第三方工具进行数据云同步，这里采用的是坚果云。
-¶坚果云操作步骤
-¶1. 申请并登录坚果云
-如下图打开坚果云的官网，点击右上角的注册或者登录按钮。
+      keepass使用坚果云同步keepass作为密码管理工具是非常优秀的，但是由于keepass本身并没有云同步的功能，因此需要借助第三方工具进行数据云同步，这里采用的是坚果云。
+坚果云操作步骤1. 申请并登录坚果云如下图打开坚果云的官网，点击右上角的注册或者登录按钮。
 
-¶2. 创建同步的应用
-如下图创建一个应用。步骤如下：
+2. 创建同步的应用如下图创建一个应用。步骤如下：
 
 点击右上角的个人中心
 点击弹框下的账户信息
-点击安全选......
+点击安全选项
+点击右小角......
     </div>
   </a>
   
@@ -623,11 +614,11 @@ keepass作为密码管理工具是非常优秀的，但是由于keepass本身并
     
     
     
-    <a href="/tags/#hexo" title="hexo" rel="1">hexo</a>
-    
-    
-    
     <a href="/tags/#keepass" title="keepass" rel="1">keepass</a>
+    
+    
+    
+    <a href="/tags/#hexo" title="hexo" rel="1">hexo</a>
     
     
   </div>
@@ -746,12 +737,12 @@ keepass作为密码管理工具是非常优秀的，但是由于keepass本身并
       <li>版本管理</li>
     </a>
     
-    <a href="/categories/#hexo">
-      <li>hexo</li>
-    </a>
-    
     <a href="/categories/#网络技术">
       <li>网络技术</li>
+    </a>
+    
+    <a href="/categories/#hexo">
+      <li>hexo</li>
     </a>
     
   </ul>

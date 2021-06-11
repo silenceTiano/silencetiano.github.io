@@ -190,17 +190,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -215,6 +204,17 @@
             <a href="/categories/">
               
               分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
               
               
             </a>
@@ -337,7 +337,7 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              总字数 <span class="post-count">720</span> &nbsp;&nbsp;&nbsp;
+              总字数 <span class="post-count">719</span> &nbsp;&nbsp;&nbsp;
               阅读预计需要 <span class="post-count">2</span> 分钟
             </span>
             <div class="blank_box"></div>
@@ -386,57 +386,52 @@ anchorjs、
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>GitHub</h1>
-<h2 id="添加ssh账户"><a class="header-anchor" href="#添加ssh账户">¶</a>添加ssh账户</h2>
-<p>开发机器(自己的电脑)想要和GitHub进行交互，则需要将开发机器的ssh公钥添加到GitHub账户上。</p>
+        <h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><h2 id="添加ssh账户"><a href="#添加ssh账户" class="headerlink" title="添加ssh账户"></a>添加ssh账户</h2><p>开发机器(自己的电脑)想要和GitHub进行交互，则需要将开发机器的ssh公钥添加到GitHub账户上。</p>
 <p>操作步骤：</p>
 <ol>
 <li>修改本地的 <code>.gitconfig</code>文件，添加或者修改</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	email = GitHub邮箱</span><br><span class="line">	name = 名称</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>创建ssh公钥，在开发机器上使用命令行生成公钥</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -t 表示加密方式，非对称性加密</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> -b 加密强度，应该大于2048,可以省略</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -C 邮箱</span></span><br><span class="line">ssh-keygen -t rsa -b 2048 -C &#x27;github注册邮箱&#x27;</span><br></pre></td></tr></table></figure>
+
 <ol start="3">
-<li>打开GitHub账号的<code>settings</code>，将上一步提醒的公钥文件，后缀为.pub 的内容粘贴到下图的 <code>key</code>处即可。</li>
+<li> 打开GitHub账号的<code>settings</code>，将上一步提醒的公钥文件，后缀为.pub 的内容粘贴到下图的 <code>key</code>处即可。</li>
 </ol>
 <p><img src="https://img-blog.csdnimg.cn/20201223152106902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="克隆项目到本地"><a class="header-anchor" href="#克隆项目到本地">¶</a>克隆项目到本地</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &#x27;项目的ssh地址&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &#x27;项目的ssh地址&#x27;</span><br></pre></td></tr></table></figure>
 <p>如果在克隆项目的时候，只想克隆项目的最新版本，不想要项目的曾经提交记录使用以下命令，这样拉取到本地的代码就是仓库的最后一个版本，之前的git提交记录不拉取，拉取速度也会快很多。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -<span class="literal">-depth</span>=<span class="number">1</span> <span class="string">&#x27;项目的ssh地址&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="克隆出错"><a class="header-anchor" href="#克隆出错">¶</a>克隆出错</h3>
-<p>如果在克隆的过程中出现了错误，使用下面两条命令</p>
+
+<h3 id="克隆出错"><a href="#克隆出错" class="headerlink" title="克隆出错"></a>克隆出错</h3><p>如果在克隆的过程中出现了错误，使用下面两条命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval &quot;$(ssh-aqent -s)&quot;</span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure>
-<h2 id="代码推送"><a class="header-anchor" href="#代码推送">¶</a>代码推送</h2>
-<p>将本地分支的所有提交推送到远程库。<code>origin</code>代表远程</p>
+
+<h2 id="代码推送"><a href="#代码推送" class="headerlink" title="代码推送"></a>代码推送</h2><p>将本地分支的所有提交推送到远程库。<code>origin</code>代表远程</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git push origin 分支名称</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="本地的分支跟踪远程的分支"><a class="header-anchor" href="#本地的分支跟踪远程的分支">¶</a>本地的分支跟踪远程的分支</h2>
-<p>让本地的某个分支跟踪远程库的某个分支，当这两个分支的代码不一致的时候就会产生提醒，提醒来自于 <code>git status</code>命令的返回结果。</p>
+
+<h2 id="本地的分支跟踪远程的分支"><a href="#本地的分支跟踪远程的分支" class="headerlink" title="本地的分支跟踪远程的分支"></a>本地的分支跟踪远程的分支</h2><p>让本地的某个分支跟踪远程库的某个分支，当这两个分支的代码不一致的时候就会产生提醒，提醒来自于 <code>git status</code>命令的返回结果。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git branch --set-upstream-to=origin/远程分支名称 本地分支名称</span></span><br><span class="line">git branch --set-upstream-to=origin/smart smart</span><br></pre></td></tr></table></figure>
+
 <p><strong>注：</strong> 如果本地的分支跟踪了远程的分支，当本地的分支发生了变化并且commit后，想要推送到远程则只需要使用下面命令即可，不再需要 <code>origin 分支名称</code>了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="从远程分支拉取代码到本地"><a class="header-anchor" href="#从远程分支拉取代码到本地">¶</a>从远程分支拉取代码到本地</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git pull origin 分支名称</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<h2 id="工作中实际使用git"><a class="header-anchor" href="#工作中实际使用git">¶</a>工作中实际使用git</h2>
-<h3 id="项目经理"><a class="header-anchor" href="#项目经理">¶</a>项目经理</h3>
-<ol>
+
+<h2 id="从远程分支拉取代码到本地"><a href="#从远程分支拉取代码到本地" class="headerlink" title="从远程分支拉取代码到本地"></a>从远程分支拉取代码到本地</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git pull origin 分支名称</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="工作中实际使用git"><a href="#工作中实际使用git" class="headerlink" title="工作中实际使用git"></a>工作中实际使用git</h2><h3 id="项目经理"><a href="#项目经理" class="headerlink" title="项目经理"></a>项目经理</h3><ol>
 <li>项目经理搭建项目的框架。</li>
 <li>搭建完后，将项目框架代码放到服务器上。</li>
 </ol>
-<h3 id="普通员工"><a class="header-anchor" href="#普通员工">¶</a>普通员工</h3>
-<ol>
+<h3 id="普通员工"><a href="#普通员工" class="headerlink" title="普通员工"></a>普通员工</h3><ol>
 <li>在自己的电脑上，生成 <code>ssh</code> 公钥，然后将公钥给项目经理，项目经理将公钥添加到服务器上</li>
 <li>项目经理会给每个组员的项目项目代码的地址，组员将代码下载到自己的电脑上</li>
 <li>创建本地分支dev后，在dev上开发自己的功能</li>
 <li>每个员工开发完自己的代码后，都需要将代码发布到远程的dev分支上。</li>
 </ol>
-<h3 id="项目中常用分支"><a class="header-anchor" href="#项目中常用分支">¶</a>项目中常用分支</h3>
-<h4 id="master"><a class="header-anchor" href="#master">¶</a>master</h4>
-<p>用于保存发布的项目代码  v1.0  v2.0</p>
-<h4 id="dev"><a class="header-anchor" href="#dev">¶</a>dev</h4>
-<p>保存开发过程中的代码</p>
+<h3 id="项目中常用分支"><a href="#项目中常用分支" class="headerlink" title="项目中常用分支"></a>项目中常用分支</h3><h4 id="master"><a href="#master" class="headerlink" title="master"></a>master</h4><p>用于保存发布的项目代码  v1.0  v2.0</p>
+<h4 id="dev"><a href="#dev" class="headerlink" title="dev"></a>dev</h4><p>保存开发过程中的代码</p>
 
 
         <hr>
@@ -444,12 +439,12 @@ anchorjs、
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2021/06/03/hexo-deploy一键部署免每次输入github账号密码/" data-toggle="tooltip" data-placement="top" title="hexo deploy一键部署免每次输入github账号密码">&larr; Previous Post</a>
+            <a href="/2021/06/03/hexo-deploy一键部署免每次输入github账号密码/"  data-placement="top" title="hexo deploy一键部署免每次输入github账号密码">&larr; 上一篇</a>
           </li>
           
           
           <li class="next">
-            <a href="/2021/06/02/git的分支管理（详细版）/" data-toggle="tooltip" data-placement="top" title="git的分支管理（详细版）">Next Post &rarr;</a>
+            <a href="/2021/06/02/git的分支管理（详细版）/"  data-placement="top" title="git的分支管理（详细版）">下一篇 &rarr;</a>
           </li>
           
         </ul>
@@ -496,7 +491,7 @@ anchorjs、
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">GitHub</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0ssh%E8%B4%A6%E6%88%B7"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">添加ssh账户</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">克隆项目到本地</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%8B%E9%9A%86%E5%87%BA%E9%94%99"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">克隆出错</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">代码推送</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%88%86%E6%94%AF%E8%B7%9F%E8%B8%AA%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">本地的分支跟踪远程的分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">从远程分支拉取代码到本地</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8git"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">工作中实际使用git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">项目经理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%99%AE%E9%80%9A%E5%91%98%E5%B7%A5"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">普通员工</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">项目中常用分支</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#master"><span class="toc-nav-number">1.6.3.1.</span> <span class="toc-nav-text">master</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dev"><span class="toc-nav-number">1.6.3.2.</span> <span class="toc-nav-text">dev</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#GitHub"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">GitHub</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0ssh%E8%B4%A6%E6%88%B7"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">添加ssh账户</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">克隆项目到本地</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%8B%E9%9A%86%E5%87%BA%E9%94%99"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">克隆出错</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">代码推送</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%88%86%E6%94%AF%E8%B7%9F%E8%B8%AA%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">本地的分支跟踪远程的分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">从远程分支拉取代码到本地</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8git"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">工作中实际使用git</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">项目经理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%99%AE%E9%80%9A%E5%91%98%E5%B7%A5"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">普通员工</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">项目中常用分支</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#master"><span class="toc-nav-number">1.6.3.1.</span> <span class="toc-nav-text">master</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dev"><span class="toc-nav-number">1.6.3.2.</span> <span class="toc-nav-text">dev</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -523,13 +518,6 @@ anchorjs、
         
 
         <!-- Friends Blog -->
-        
-        <hr>
-        <h5>链友</h5>
-        <ul class="list-inline">
-
-          
-        </ul>
         
       </div>
     </div>

@@ -190,17 +190,6 @@
           
           
           <li>
-            <a href="/about/">
-              
-              关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -215,6 +204,17 @@
             <a href="/categories/">
               
               分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
               
               
             </a>
@@ -386,108 +386,105 @@ anchorjs、
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>git的分支管理</h1>
-<blockquote>
+        <h1 id="git的分支管理"><a href="#git的分支管理" class="headerlink" title="git的分支管理"></a>git的分支管理</h1><blockquote>
 <p>分支之间彼此互不干扰，各自完成各自的工作和内容，最后再 <strong>合并到总分支(原分支)</strong> 上，安全、不影响其他分支工作</p>
 </blockquote>
-<h2 id="查看当前工作在那个分支"><a class="header-anchor" href="#查看当前工作在那个分支">¶</a>查看当前工作在那个分支</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * master</span></span><br></pre></td></tr></table></figure>
-<h2 id="master分支"><a class="header-anchor" href="#master分支">¶</a>master分支</h2>
-<p>从项目创建之初，有且唯一的分支就是主分支，之后如果创建分支，就是一个一个的从分支，主分支被叫做<code>master</code></p>
+<h2 id="查看当前工作在那个分支"><a href="#查看当前工作在那个分支" class="headerlink" title="查看当前工作在那个分支"></a>查看当前工作在那个分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * master</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="master分支"><a href="#master分支" class="headerlink" title="master分支"></a>master分支</h2><p>从项目创建之初，有且唯一的分支就是主分支，之后如果创建分支，就是一个一个的从分支，主分支被叫做<code>master</code></p>
 <p>而HEAD所指向的直接关系是当前分支，再找到分支的版本。如下图：</p>
 <p><img src="https://img-blog.csdnimg.cn/20201221165234243.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="创建新分支"><a class="header-anchor" href="#创建新分支">¶</a>创建新分支</h2>
-<p>git创建新分支。即在当前位置创建一个指针，起名为从分支dev，然后将HEAD指向dev。如下图：</p>
+<h2 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h2><p>git创建新分支。即在当前位置创建一个指针，起名为从分支dev，然后将HEAD指向dev。如下图：</p>
 <ol>
 <li>之后的提交都是在dev分支上提交，在没有总提交master分支之前，master分支位置停留在创建从分支的位置。而HEAD会跟随新创建的分支，跟随每一次提交不停的先前移动</li>
 <li>新创建的dev分支会继承master分支的所有提交，通过 <code>git log</code> 可以看出来。</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/20201221165251386.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>
-<img src="https://img-blog.csdnimg.cn/20201221165314252.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201221165251386.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201221165314252.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建并切换到dev分支</span></span><br><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure>
+
 <p>此时就会有两个分支，并且指向 <code>dev分支</code></p>
 <p><img src="https://img-blog.csdnimg.cn/20201221165341428.JPG#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="提交分支"><a class="header-anchor" href="#提交分支">¶</a>提交分支</h2>
-<p>当dev分支工作完成，需要合并到master分支的时候，也只是将master指针指向当前dev的位置，并将HEAD指向master，这时dev分支可以直接删除，也可以不删除，删除的话也只是移除了dev指针，只留下一个master指针，对工作区没有热河的影响。<br>
-<img src="https://img-blog.csdnimg.cn/20201221165354318.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="切换回主分支"><a class="header-anchor" href="#切换回主分支">¶</a>切换回主分支</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 分支切换回主分支master</span></span><br><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+<h2 id="提交分支"><a href="#提交分支" class="headerlink" title="提交分支"></a>提交分支</h2><p>当dev分支工作完成，需要合并到master分支的时候，也只是将master指针指向当前dev的位置，并将HEAD指向master，这时dev分支可以直接删除，也可以不删除，删除的话也只是移除了dev指针，只留下一个master指针，对工作区没有热河的影响。<br><img src="https://img-blog.csdnimg.cn/20201221165354318.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="切换回主分支"><a href="#切换回主分支" class="headerlink" title="切换回主分支"></a>切换回主分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 分支切换回主分支master</span></span><br><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
 <p>当分支切换回主分支的时候，可以将dev的修改提交合并到master分支上，使用：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 合并dev到master</span></span><br><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>**重点：**这一次的合并称之为快速合并 <code>fast-forward</code>。只是将master的指针指向了dev最后一次提交的位置。</p>
+<p><strong>重点：</strong>这一次的合并称之为快速合并 <code>fast-forward</code>。只是将master的指针指向了dev最后一次提交的位置。</p>
 </blockquote>
 <p>当分支切换回主分支master的时候，就可以删除dev分支使用：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除dev分支</span></span><br><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
-<h2 id="小结："><a class="header-anchor" href="#小结：">¶</a>小结：</h2>
-<p>查看分支：<code>git branch</code></p>
+
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>查看分支：<code>git branch</code></p>
 <p>创建分支：<code>git branch &lt;name&gt;</code></p>
 <p>切换分支：<code>git checkout &lt;name&gt;</code></p>
 <p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
 <p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
 <p>删除分支：<code>git breach -d &lt;name&gt;</code></p>
-<h2 id="冲突的发生和解决"><a class="header-anchor" href="#冲突的发生和解决">¶</a>冲突的发生和解决</h2>
-<p>当同一个文件被两个分支都修改过、提交后，想要合并两个分支就会产生冲突，不能快速将dev合并到master上。并且git会提醒“合并过程中产生了冲突，请修正后再提交”。</p>
+<h2 id="冲突的发生和解决"><a href="#冲突的发生和解决" class="headerlink" title="冲突的发生和解决"></a>冲突的发生和解决</h2><p>当同一个文件被两个分支都修改过、提交后，想要合并两个分支就会产生冲突，不能快速将dev合并到master上。并且git会提醒“合并过程中产生了冲突，请修正后再提交”。</p>
 <p><img src="https://img-blog.csdnimg.cn/20201221165409121.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>修正的过程</p>
 <ol>
 <li>将两个分支的文件，进行对比修改，满足两个分支的提交。</li>
 <li>使用 git add 和git commit 进行一次新的提交。(此时提交的是master分支)</li>
-<li>再次合并<br>
-<img src="https://img-blog.csdnimg.cn/20201221165423717.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+<li>再次合并<br><img src="https://img-blog.csdnimg.cn/20201221165423717.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><h2 id="查看带有冲突解决的日志"><a href="#查看带有冲突解决的日志" class="headerlink" title="查看带有冲突解决的日志"></a>查看带有冲突解决的日志</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph -- pretty=oneline</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="查看带有冲突解决的日志"><a class="header-anchor" href="#查看带有冲突解决的日志">¶</a>查看带有冲突解决的日志</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph -- pretty=oneline</span><br></pre></td></tr></table></figure>
-<h2 id="分支管理策略"><a class="header-anchor" href="#分支管理策略">¶</a>分支管理策略</h2>
-<blockquote>
+<h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><blockquote>
 <p>通常，合并分支时，如果没有冲突，并且分支是单向一条线路继承下来的，git会使用 fast forword 模式，但是有些快速合并不能成功，但是又没有冲突时，就会触发分支管理策略，git会自动做一次新的提交。</p>
 </blockquote>
-<p>当两个分支对工作区都进行了修改，但是修改的并不是同一个文件，而是两个不同的文件，也就是不会产生冲突。此时合并的时候，不能使用**“快速合并”**，就会弹框需要你输入一段合并说明。使用快捷键 <strong>ctrl+x</strong> 退出</p>
-<h2 id="合并时禁止快速合并模式"><a class="header-anchor" href="#合并时禁止快速合并模式">¶</a>合并时禁止快速合并模式</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 合并dev到master，禁止快速合并模式，同时添加说明</span></span><br><span class="line">git merge --no-ff -m &#x27;&#x27; dev</span><br></pre></td></tr></table></figure>
-<h2 id="bug分支"><a class="header-anchor" href="#bug分支">¶</a>bug分支</h2>
-<h3 id="描述和说明"><a class="header-anchor" href="#描述和说明">¶</a>描述和说明</h3>
-<p>使用场景：当在某个分支上正在工作，突然有一个紧急的bug需要修复，此时可以使用 <code>stash</code>功能，将当前正在工作的<code>现场存储起来</code>，等bug修复之后，在返回继续工作。</p>
+<p>当两个分支对工作区都进行了修改，但是修改的并不是同一个文件，而是两个不同的文件，也就是不会产生冲突。此时合并的时候，不能使用<strong>“快速合并”</strong>，就会弹框需要你输入一段合并说明。使用快捷键 <strong>ctrl+x</strong> 退出</p>
+<h2 id="合并时禁止快速合并模式"><a href="#合并时禁止快速合并模式" class="headerlink" title="合并时禁止快速合并模式"></a>合并时禁止快速合并模式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 合并dev到master，禁止快速合并模式，同时添加说明</span></span><br><span class="line">git merge --no-ff -m &#x27;&#x27; dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h2><h3 id="描述和说明"><a href="#描述和说明" class="headerlink" title="描述和说明"></a>描述和说明</h3><p>使用场景：当在某个分支上正在工作，突然有一个紧急的bug需要修复，此时可以使用 <code>stash</code>功能，将当前正在工作的<code>现场存储起来</code>，等bug修复之后，在返回继续工作。</p>
 <p>操作顺序：</p>
 <ol>
 <li>将当前的工作现场临时存储</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 对当前现场进行存储</span></span><br><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>切换到bug出现的分支上，比如bug出现在 <code>master</code>分支。如果bug就是在当前分支，可以操作此步骤</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
 <ol start="3">
 <li>新添加一个bug临时分支</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b bug001</span><br></pre></td></tr></table></figure>
+
 <ol start="4">
 <li>对代码进行修复。</li>
 <li>切换回master分支</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
 <ol start="6">
 <li>合并bug分支到主master上</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m &#x27;合并bug分支到master&#x27; bug001</span><br></pre></td></tr></table></figure>
+
 <ol start="7">
 <li>删除bug001分支</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d bug001</span><br></pre></td></tr></table></figure>
+
 <ol start="8">
 <li>回到之前的工作现场所在的分支</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+
 <ol start="9">
 <li>查看当前分支保存那些工作现场(之前封冻存储的工作现场)</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+
 <ol start="10">
 <li>恢复存储的现场</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-<h3 id="小结：-v2"><a class="header-anchor" href="#小结：-v2">¶</a>小结：</h3>
-<p>修复bug时，通过创建新的bug分支进行修复，然后合并，最后删除。</p>
+
+<h3 id="小结：-1"><a href="#小结：-1" class="headerlink" title="小结："></a>小结：</h3><p>修复bug时，通过创建新的bug分支进行修复，然后合并，最后删除。</p>
 <p>当手头工作没有做完时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，恢复工作现场。</p>
 
 
@@ -496,12 +493,12 @@ anchorjs、
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2021/06/02/GitHub使用（详细版）/" data-toggle="tooltip" data-placement="top" title="GitHub使用（详细版）">&larr; Previous Post</a>
+            <a href="/2021/06/02/GitHub使用（详细版）/"  data-placement="top" title="GitHub使用（详细版）">&larr; 上一篇</a>
           </li>
           
           
           <li class="next">
-            <a href="/2021/06/02/git基础操作（详细版）/" data-toggle="tooltip" data-placement="top" title="git基础操作（详细版）">Next Post &rarr;</a>
+            <a href="/2021/06/02/git基础操作（详细版）/"  data-placement="top" title="git基础操作（详细版）">下一篇 &rarr;</a>
           </li>
           
         </ul>
@@ -548,7 +545,7 @@ anchorjs、
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git的分支管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%9C%A8%E9%82%A3%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">查看当前工作在那个分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#master%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">master分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">创建新分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8F%90%E4%BA%A4%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">提交分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%87%E6%8D%A2%E5%9B%9E%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">切换回主分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">小结：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%B2%E7%AA%81%E7%9A%84%E5%8F%91%E7%94%9F%E5%92%8C%E8%A7%A3%E5%86%B3"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">冲突的发生和解决</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B8%A6%E6%9C%89%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%97%A5%E5%BF%97"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">查看带有冲突解决的日志</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">分支管理策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%88%E5%B9%B6%E6%97%B6%E7%A6%81%E6%AD%A2%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">合并时禁止快速合并模式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#bug%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">bug分支</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8F%8F%E8%BF%B0%E5%92%8C%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.11.1.</span> <span class="toc-nav-text">描述和说明</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A-v2"><span class="toc-nav-number">1.11.2.</span> <span class="toc-nav-text">小结：</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#git%E7%9A%84%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">git的分支管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%9C%A8%E9%82%A3%E4%B8%AA%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">查看当前工作在那个分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#master%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">master分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">创建新分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8F%90%E4%BA%A4%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">提交分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%87%E6%8D%A2%E5%9B%9E%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">切换回主分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">小结：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%B2%E7%AA%81%E7%9A%84%E5%8F%91%E7%94%9F%E5%92%8C%E8%A7%A3%E5%86%B3"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">冲突的发生和解决</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B8%A6%E6%9C%89%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E7%9A%84%E6%97%A5%E5%BF%97"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">查看带有冲突解决的日志</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">分支管理策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%88%E5%B9%B6%E6%97%B6%E7%A6%81%E6%AD%A2%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">合并时禁止快速合并模式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#bug%E5%88%86%E6%94%AF"><span class="toc-nav-number">1.11.</span> <span class="toc-nav-text">bug分支</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8F%8F%E8%BF%B0%E5%92%8C%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.11.1.</span> <span class="toc-nav-text">描述和说明</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A-1"><span class="toc-nav-number">1.11.2.</span> <span class="toc-nav-text">小结：</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -575,13 +572,6 @@ anchorjs、
         
 
         <!-- Friends Blog -->
-        
-        <hr>
-        <h5>链友</h5>
-        <ul class="list-inline">
-
-          
-        </ul>
         
       </div>
     </div>
