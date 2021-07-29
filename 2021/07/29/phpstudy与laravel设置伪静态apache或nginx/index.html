@@ -92,10 +92,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://silencetiano.github.io/tags/hexo/">
+  <link rel="canonical" href="https://silencetiano.github.io/2021/07/29/phpstudy与laravel设置伪静态apache或nginx/">
   <title>
     
-      
+      phpstudy与laravel设置伪静态apache或nginx - undefined
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -291,19 +291,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('https://cdn.jsdelivr.net/gh/silenceTiano/silencetiano.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('laravel.jpg');
+      --intro-header-background-image-url-page: url('/laravel.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/silenceTiano/silencetiano.github.io/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('laravel.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/laravel.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('laravel.jpg'); */
       
     }
 
@@ -321,9 +321,39 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>silence</h1>
-            <span class="subheading">你所赖着不愿起床的今天，是多少人睡后再也起不来的明天！</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#laravel" title="laravel">laravel</a>
+              
+            </div>
+            <h1>phpstudy与laravel设置伪静态apache或nginx</h1>
+            <h2 class="subheading">laravel设置伪静态apache或nginx</h2>
+            <span class="meta">
+              作者：hgt 于2021-07-29创建
+            </span>
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              总字数 <span class="post-count">476</span> &nbsp;&nbsp;&nbsp;
+              阅读预计需要 <span class="post-count">1</span> 分钟
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+
+            
+              <!-- 不蒜子统计 start -->
+              <span class="meta" id="busuanzi_container_page_pv">
+                本文章被访问<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+              </span>
+              <!-- 不蒜子统计 end -->
+              <span class="meta" id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+              </span>
+            
           </div>
           
         </div>
@@ -348,314 +378,119 @@ Featured-Tags、
 Friends Blog、
 anchorjs、
 ) -->
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="phpstudy-laravel设置伪静态apache-Nginx"><a href="#phpstudy-laravel设置伪静态apache-Nginx" class="headerlink" title="phpstudy laravel设置伪静态apache|Nginx"></a>phpstudy laravel设置伪静态apache|Nginx</h1><p>伪静态是网页开发逃不过的话题，操作起来并不是很难，但就是每次配的时候都会出现忘记了上次是咋弄的，因此一顿查，一顿看，终于配好了。等下次再需要的时候又忘记上次怎么配置的，重复往复，这大概就是程序员的小烦恼吧，有没有同感呢？因此仔细完整的记录下来是非常有必要。<br>下面就来看下如何配置伪静态。</p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><p>本次的配置环境：</p>
+<ol>
+<li><strong>laravel</strong></li>
+<li><strong>phpstudy</strong></li>
+<li><strong>apache或者nginx</strong></li>
+</ol>
+<h2 id="apache"><a href="#apache" class="headerlink" title="apache"></a>apache</h2><h3 id="打开apache路由重写的功能"><a href="#打开apache路由重写的功能" class="headerlink" title="打开apache路由重写的功能"></a>打开apache路由重写的功能</h3><p>该功能是apache内部功能，再apache配置文件 <code>httpd.conf</code> 中 ，将下面这句话前面的#去掉表示激活重写功能</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoadModule rewrite_module modules/mod_rewrite.so</span><br></pre></td></tr></table></figure>
+<h3 id="设置项目-htaccess文件"><a href="#设置项目-htaccess文件" class="headerlink" title="设置项目.htaccess文件"></a>设置项目<code>.htaccess</code>文件</h3><p>laravel项目的起始文件是 <code>public/index.php</code> 因此该文件所在目录下会有这么一个文件 <code>.htaccess</code> ，想必大家都是非常清除的，将下面的代码写入文件中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule mod_rewrite.c&gt;</span><br><span class="line">    &lt;IfModule mod_negotiation.c&gt;</span><br><span class="line">        Options -MultiViews -Indexes</span><br><span class="line">    &lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line">    RewriteEngine On</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Handle Authorization Header</span></span><br><span class="line">    RewriteCond %&#123;HTTP:Authorization&#125; .</span><br><span class="line">    RewriteRule .* - [E=HTTP_AUTHORIZATION:%&#123;HTTP:Authorization&#125;]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Redirect Trailing Slashes If Not A Folder...</span></span><br><span class="line">    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</span><br><span class="line">    RewriteCond %&#123;REQUEST_URI&#125; (.+)/$</span><br><span class="line">    RewriteRule ^ %1 [L,R=301]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Send Requests To Front Controller...</span></span><br><span class="line">    RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</span><br><span class="line">    RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</span><br><span class="line">    RewriteRule ^ index.php [L]</span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="phpstudy中配置网站"><a href="#phpstudy中配置网站" class="headerlink" title="phpstudy中配置网站"></a>phpstudy中配置网站</h3><p>配置好路由重写后，你可以使用127.0.0.1地址直接访问，也可以使用phpstudy中的 <strong>“网站”</strong> 功能。如下添加<br><img src="https://img-blog.csdnimg.cn/57d84f34e3f04a97bde5f8947d96b5a2.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbGVuY2VfcGlub3Q=,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>此时直接访问项目即可完成伪静态</p>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p>配置方式和上面的apache一摸一样，唯一区别在于项目中nginx对应的文件名为<code>nginx.htaccess</code>。向该文件中添加下面内容即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Check if a file exists, or route it to index.php.</span></span><br><span class="line">try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /exploit/index.php?<span class="variable">$query_string</span>;</span><br><span class="line"><span class="keyword">if</span> (!-e <span class="variable">$request_filename</span>) &#123;</span><br><span class="line">    rewrite  ^(.*)$  /index.php?s=<span class="variable">$1</span>  last;</span><br><span class="line">    <span class="built_in">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/07/29/phpstudy与laravel设置伪静态apache或nginx/" style="color: #0085a1">
-              <span>
-                phpstudy与laravel设置伪静态apache或nginx
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            06-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/06/03/hexo-deploy一键部署免每次输入github账号密码/" style="color: #0085a1">
-              <span>
-                hexo deploy一键部署免每次输入github账号密码
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/06/02/GitHub使用（详细版）/" style="color: #0085a1">
-              <span>
-                GitHub使用（详细版）
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/06/02/git的分支管理（详细版）/" style="color: #0085a1">
-              <span>
-                git的分支管理（详细版）
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/06/02/git基础操作（详细版）/" style="color: #0085a1">
-              <span>
-                git基础操作（详细版）
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/04/20/keepass使用坚果云同步/" style="color: #0085a1">
-              <span>
-                keepass使用坚果云同步
-                
-                -- 
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/2021/06/03/hexo-deploy一键部署免每次输入github账号密码/"  data-placement="top" title="hexo deploy一键部署免每次输入github账号密码">下一篇 &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果你喜欢这个博客或者觉得它对你有用，欢迎你转发、分享这个博客，让更多的人参与进来。 如果博客中使用的图片侵犯了您的版权，请联系作者删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#phpstudy-laravel%E8%AE%BE%E7%BD%AE%E4%BC%AA%E9%9D%99%E6%80%81apache-Nginx"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">phpstudy laravel设置伪静态apache|Nginx</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前置条件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#apache"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">apache</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%89%93%E5%BC%80apache%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">打开apache路由重写的功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%A1%B9%E7%9B%AE-htaccess%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">设置项目.htaccess文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#phpstudy%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">phpstudy中配置网站</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#nginx"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">nginx</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#laravel" title="laravel">laravel</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#git" title="git" rel="3">git</a>
-    
-    
-    
-    <a href="/tags/#hexo" title="hexo" rel="1">hexo</a>
-    
-    
-    
-    <a href="/tags/#keepass" title="keepass" rel="1">keepass</a>
-    
-    
-    
-    <a href="/tags/#laravel" title="laravel" rel="1">laravel</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/593514c68c720.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>你所赖着不愿起床的今天，是多少人睡后再也起不来的明天！</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/silenceTiano">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../2021/07/29/phpstudy%E4%B8%8Elaravel%E8%AE%BE%E7%BD%AE%E4%BC%AA%E9%9D%99%E6%80%81apache%E6%88%96nginx/">
-      <li>phpstudy与laravel设置伪静态apache或nginx</li>
-    </a>
-    
-    <a href="../../2021/06/03/hexo-deploy%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E5%85%8D%E6%AF%8F%E6%AC%A1%E8%BE%93%E5%85%A5github%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81/">
-      <li>hexo deploy一键部署免每次输入github账号密码</li>
-    </a>
-    
-    <a href="../../2021/06/02/GitHub%E4%BD%BF%E7%94%A8%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89/">
-      <li>GitHub使用（详细版）</li>
-    </a>
-    
-    <a href="../../2021/06/02/git%E7%9A%84%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89/">
-      <li>git的分支管理（详细版）</li>
-    </a>
-    
-    <a href="../../2021/06/02/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%EF%BC%88%E8%AF%A6%E7%BB%86%E7%89%88%EF%BC%89/">
-      <li>git基础操作（详细版）</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">链友</a></h5>
-<ul class="list-inline">
-  
-</ul>
-
-
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">存档</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/07/">七月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/06/">六月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">分类</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#版本管理">
-      <li>版本管理</li>
-    </a>
-    
-    <a href="/categories/#hexo">
-      <li>hexo</li>
-    </a>
-    
-    <a href="/categories/#网络技术">
-      <li>网络技术</li>
-    </a>
-    
-    <a href="/categories/#伪静态">
-      <li>伪静态</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
 
 
 <!-- Footer (contains ThemeColor、viewer) -->
